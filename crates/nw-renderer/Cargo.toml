@@ -1,0 +1,16 @@
+﻿[package]
+name = "nw-renderer"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+ash.workspace = true
+ash-window.workspace = true
+raw-window-handle.workspace = true
+winit.workspace = true
+glam.workspace = true
+shaderc.workspace = true
+bytemuck.workspace = true
+anyhow.workspace = true
+tracing.workspace = true

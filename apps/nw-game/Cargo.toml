@@ -1,0 +1,17 @@
+﻿[package]
+name = "nw-game"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+nw-core = { path = "../../crates/nw-core" }
+nw-renderer = { path = "../../crates/nw-renderer" }
+nw-physics = { path = "../../crates/nw-physics" }
+nw-audio = { path = "../../crates/nw-audio" }
+nw-assets = { path = "../../crates/nw-assets" }
+nw-world = { path = "../../crates/nw-world" }
+nw-gameplay = { path = "../../crates/nw-gameplay" }
+nw-ui = { path = "../../crates/nw-ui" }
+winit.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true

@@ -1,0 +1,13 @@
+﻿[package]
+name = "nw-editor"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+nw-core = { path = "../../crates/nw-core" }
+nw-renderer = { path = "../../crates/nw-renderer" }
+nw-assets = { path = "../../crates/nw-assets" }
+nw-world = { path = "../../crates/nw-world" }
+nw-tools = { path = "../../crates/nw-tools" }
+egui.workspace = true
+tracing.workspace = true

@@ -1,0 +1,13 @@
+﻿[package]
+name = "nw-assets"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+gltf.workspace = true
+image.workspace = true
+serde.workspace = true
+ron.workspace = true
+anyhow.workspace = true
+tracing.workspace = true

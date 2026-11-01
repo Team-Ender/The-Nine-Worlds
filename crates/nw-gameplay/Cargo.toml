@@ -1,0 +1,12 @@
+﻿[package]
+name = "nw-gameplay"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+bevy_ecs.workspace = true
+glam.workspace = true
+serde.workspace = true
+tracing.workspace = true
+thiserror.workspace = true
