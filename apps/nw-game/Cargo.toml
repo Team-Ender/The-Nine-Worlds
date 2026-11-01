@@ -12,6 +12,6 @@ nw-assets = { path = "../../crates/nw-assets" }
 nw-world = { path = "../../crates/nw-world" }
 nw-gameplay = { path = "../../crates/nw-gameplay" }
 nw-ui = { path = "../../crates/nw-ui" }
-winit.workspace = true
+sdl3.workspace = true
 tracing.workspace = true
 tracing-subscriber.workspace = true
