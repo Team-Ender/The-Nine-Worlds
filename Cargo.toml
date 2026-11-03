@@ -12,9 +12,12 @@ version = "0.1.0"
 
 [workspace.dependencies]
 # Graphics and windowing
-ash = "0.38"
-sdl3 = { version = "0.20", features = ["build-from-source"] }
+sdl3 = {
+    version = "0.20",
+    features = ["build-from-source", "raw-window-handle"]
+}
 raw-window-handle = "0.6"
+vulkano = "0.35.2"
 glam = "0.30"
 shaderc = "0.9"
 bytemuck = { version = "1", features = ["derive"] }

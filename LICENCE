@@ -1,0 +1,266 @@
+# THE NINE WORLDS
+## Source Code, Game Content and Community Licence
+
+**Version:** 0.2 — Draft  
+**Project identity:** Team Ender  
+**Project:** The Nine Worlds (TNW)  
+**Copyright notice:** © 2026 Team Ender  
+**Licensor:** The individual copyright holder operating under the Team Ender identity  
+**Contact:** enderteam68@gmail.com  
+**Effective date:** [Date of publication]
+
+---
+
+## 1. Introduction and scope
+
+This licence governs access to, use of, modification of and redistribution of The Nine Worlds ("TNW"), including its source code, game assets, official binaries, dedicated server software and associated development materials.
+
+TNW is a source-available proprietary project. Its source code is made available for public inspection, modification, private building and redistribution under the conditions of this licence.
+
+This licence does not make TNW an open-source project under the Open Source Definition.
+
+Team Ender is the project identity under which TNW is developed and published. The individual copyright holder operating under that identity grants the permissions described in this licence.
+
+By using, copying, modifying or distributing material covered by this licence, you agree to its applicable terms.
+
+## 2. Definitions
+
+For this licence:
+
+- **Project** means The Nine Worlds and its officially maintained components.
+- **Team Ender** means the project identity under which TNW is developed and published.
+- **Licensor** means the individual copyright holder operating under the Team Ender identity, or a successor rights holder authorised to administer this licence.
+- **Source Code** means human-readable programming code and associated development files.
+- **Game Assets** means artwork, models, textures, animations, sounds, music, writing, characters, maps and other creative content belonging to TNW.
+- **Game Binary** means a compiled executable or distributable build of the TNW game.
+- **Official Server Binary** means an unmodified dedicated server executable officially released by Team Ender.
+- **Modified Build** means a compiled game or server build produced from modified TNW source code.
+- **Mod** means a separate extension or modification made through the official TNW modding API or SDK.
+- **Contribution** means original work submitted to Team Ender and accepted into the official project.
+
+## 3. Source code permissions
+
+You are permitted to:
+
+1. Read, inspect and study TNW Source Code.
+2. Build TNW from source for private use.
+3. Modify TNW Source Code.
+4. Create public forks of the source repository.
+5. Publish and redistribute original or modified TNW Source Code.
+6. Reuse individual TNW engine components in independent projects, including renderers, physics integrations, networking systems and other reusable engine technology.
+7. Develop independent tools, libraries and modding frameworks using permitted TNW Source Code.
+
+These permissions are worldwide and royalty-free, subject to the restrictions in this licence.
+
+### 3.1 Attribution
+
+When redistributing TNW Source Code or reusing TNW engine code, you must:
+
+- Preserve applicable copyright and licence notices.
+- Clearly acknowledge The Nine Worlds and Team Ender as the original source.
+- Identify substantial modifications you have made, where practical.
+
+### 3.2 Notification of independent code reuse
+
+If you reuse TNW engine code in a separate project, you must notify Team Ender by email at:
+
+**enderteam68@gmail.com**
+
+This is a notification requirement, not an application for permission. Team Ender does not need to approve the reuse.
+
+You may commercially use permitted engine code in an independent project, provided you comply with this licence and do not include restricted TNW Game Assets or distribute TNW itself in violation of this licence.
+
+Independent projects may distribute their own compiled binaries, provided those binaries are not TNW Game Binaries or prohibited Modified Builds.
+
+### 3.3 Source forks and contributions
+
+You may maintain public forks on Git hosting and collaboration platforms, including platforms that support pull requests or merge requests.
+
+You may submit changes to the official repository.
+
+- Rejected contributions do not require you to delete your fork.
+- After a contribution has been accepted and merged, deleting the corresponding fork is recommended but not mandatory.
+- Public source forks and modified source code may be redistributed under this licence.
+- A public source fork does not grant permission to distribute compiled TNW game binaries.
+
+## 4. Game binary restrictions
+
+Unless the Licensor has explicitly authorised it in writing, you may not:
+
+1. Redistribute the original TNW game binary.
+2. Redistribute modified TNW game builds.
+3. Sell or otherwise distribute compiled versions of TNW.
+4. Provide unofficial mirrors of TNW game binaries.
+
+You may privately build and use your own versions from source, subject to this licence.
+
+These restrictions apply regardless of whether the binary is distributed for free or for payment.
+
+## 5. Dedicated server software
+
+TNW includes a separate headless dedicated server executable.
+
+You may:
+
+- Host public or private TNW servers.
+- Run servers independently of the graphical game client.
+- Redistribute the official, unmodified dedicated server binary.
+- Operate servers on your own hardware or through third-party hosting providers.
+
+You may not redistribute modified server binaries or unofficial compiled server builds without written permission from the Licensor.
+
+Server-side modifications and optimisation should be implemented through the official modding mechanisms rather than redistributed modified server executables.
+
+The permission to redistribute the official server binary does not grant permission to redistribute modified game binaries.
+
+## 6. Game assets and creative content
+
+Original TNW Game Assets created by the Licensor are owned by the Licensor.
+
+Third-party assets and contributions remain subject to the ownership and licensing terms applicable to their creators.
+
+You may use TNW assets in permitted non-commercial fan projects and other uses expressly allowed by the Licensor.
+
+You may not independently sell, license for payment or commercially exploit TNW Game Assets.
+
+This restriction includes:
+
+- Selling individual game assets.
+- Selling asset packs containing TNW assets.
+- Monetising fan-made content that incorporates TNW assets.
+- Presenting TNW assets as your own original creations.
+
+This section does not prevent the Licensor from granting separate written permissions.
+
+## 7. Modding
+
+Team Ender supports community modding through the official TNW modding API, SDK and associated tools.
+
+You may create, modify, distribute and monetise Mods.
+
+### 7.1 Mod licensing
+
+Mod creators may choose their own licences for their original work.
+
+Mods do not have to use the same licence as TNW, provided they comply with the official modding rules.
+
+### 7.2 Mod monetisation
+
+You may charge for your original Mods, offer paid mod features, accept donations or use other monetisation methods.
+
+However, you may not use mod monetisation as a way to sell or commercially exploit TNW Game Assets.
+
+### 7.3 Official modding rules
+
+All Mods must follow the official TNW Modding Rules and technical requirements published by Team Ender.
+
+The official Modding Rules and SDK documentation will be published separately and may specify requirements covering:
+
+- Security and permissions.
+- Compatibility and supported versions.
+- Multiplayer behaviour.
+- Distribution and installation.
+- Malicious code and prohibited behaviour.
+- Technical requirements and API usage.
+
+The modding rules may be updated independently of this licence.
+
+The modding rules govern technical and platform requirements. This licence governs copyright permissions and redistribution rights. The modding rules cannot silently grant permissions prohibited by this licence.
+
+### 7.4 Mods and game binaries
+
+A Mod distributed through the official modding mechanisms is not automatically considered a modified TNW game binary.
+
+The permission to distribute Mods does not grant permission to distribute modified game or server executables.
+
+## 8. Contributions
+
+Contributors retain ownership of the original work they create and submit to TNW, including original code and assets.
+
+By submitting a Contribution that the Licensor accepts and incorporates into the official project, you grant the Licensor a worldwide, perpetual, royalty-free, non-exclusive licence to:
+
+- Reproduce the Contribution.
+- Modify and adapt it.
+- Create derivative works based on it.
+- Incorporate it into TNW.
+- Distribute it as part of TNW and its official components.
+- Make it available through official project distribution channels.
+- Authorise distributors and service providers to exercise these rights on the Licensor's behalf.
+
+This licence is intended to allow Team Ender to maintain and distribute TNW without taking ownership of contributors' original work.
+
+You must have the necessary rights to submit your Contribution. You must identify third-party code, assets, dependencies or other material included in it, along with their applicable licences.
+
+Submitting a pull request does not automatically transfer ownership to the Licensor.
+
+A Contribution is accepted when the Licensor explicitly accepts it and incorporates it into the official project.
+
+## 9. Third-party material
+
+TNW may contain third-party software, libraries, tools or assets.
+
+Such material remains subject to its own applicable licences.
+
+Nothing in this licence overrides the rights or obligations established by third-party licences.
+
+If a third-party component has additional redistribution or attribution requirements, those requirements must also be followed.
+
+## 10. Trademarks and project identity
+
+This licence does not grant permission to use Team Ender's or TNW's trademarks, logos or official branding in a way that suggests endorsement, affiliation or official status.
+
+You may accurately refer to TNW when describing compatible Mods, independent projects, contributions or community activities.
+
+You may not falsely present an unofficial project as an official Team Ender release.
+
+## 11. Termination
+
+If you materially violate this licence, the permissions granted to you may terminate.
+
+Where reasonably possible, the Licensor should provide written notice describing the violation and allow a reasonable opportunity to correct it.
+
+If the violation is corrected within the specified period, the permissions should remain in effect.
+
+Termination does not automatically revoke rights that the Licensor has already received under the Contribution section, subject to applicable law.
+
+## 12. Disclaimer of warranty
+
+TNW and all material distributed under this licence are provided "AS IS", to the maximum extent permitted by applicable law.
+
+The Licensor makes no guarantee that TNW will be free of errors, interruptions, security issues, compatibility problems or data loss.
+
+The Licensor does not guarantee that community Mods or third-party server software are safe, reliable or compatible.
+
+## 13. Limitation of liability
+
+To the maximum extent permitted by applicable law, the Licensor is not liable for indirect, incidental, special or consequential damages arising from the use of TNW or material distributed under this licence.
+
+Nothing in this section excludes liability that cannot legally be excluded or limited.
+
+## 14. International application
+
+This licence is intended to apply to users and contributors worldwide.
+
+The permissions granted are worldwide, but they remain subject to mandatory laws applicable in the relevant jurisdiction.
+
+If a provision is held unenforceable in a particular jurisdiction, that provision should be limited only to the extent necessary, and the remaining provisions should continue to apply where legally possible.
+
+## 15. Changes to this licence
+
+The Licensor may publish new versions of this licence.
+
+Each version must identify the material and releases to which it applies.
+
+Unless expressly agreed otherwise, material already distributed under an earlier version remains governed by the licence version under which it was distributed.
+
+## 16. Contact
+
+Questions, notifications of independent engine-code reuse, requests for additional permissions and other licence-related communications should be sent to:
+
+**Team Ender**  
+**Email:** enderteam68@gmail.com  
+**Project:** The Nine Worlds
+
+---
+
+**End of licence — Version 0.2**

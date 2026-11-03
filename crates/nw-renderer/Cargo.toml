@@ -5,7 +5,7 @@ edition.workspace = true
 license.workspace = true
 
 [dependencies]
-ash.workspace = true
+vulkano.workspace = true
 sdl3.workspace = true
 glam.workspace = true
 shaderc.workspace = true
