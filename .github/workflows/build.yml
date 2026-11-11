@@ -1,0 +1,185 @@
+name: Build/Nightly
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build ${{ matrix.platform }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        include:
+          - os: windows-latest
+            platform: windows-x64
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Ninja
+        uses: seanmiddleditch/gha-setup-ninja@master
+
+      - name: Setup LLVM
+        uses: KyleMayes/install-llvm-action@v2
+        with:
+          version: "20"
+          env: true
+
+      - name: Install Linux dependencies
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            git \
+            pkg-config \
+            libgl1-mesa-dev \
+            libx11-dev \
+            libxcursor-dev \
+            libxinerama-dev \
+            libxrandr-dev \
+            libxi-dev \
+            libxext-dev \
+            libxfixes-dev \
+            libwayland-dev \
+            libxkbcommon-dev \
+            libasound2-dev
+
+      - name: Configure CMake
+        shell: pwsh
+        run: |
+          cmake -S . -B build `
+            -G Ninja `
+            -DCMAKE_BUILD_TYPE=Release `
+            -DCMAKE_C_COMPILER=clang `
+            -DCMAKE_CXX_COMPILER=clang++
+
+      - name: Build
+        run: cmake --build build --parallel
+
+      - name: Package Windows
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path package
+
+          Copy-Item `
+            "build/TheNineWorlds.exe" `
+            "package/TheNineWorlds.exe"
+
+          if (Test-Path "assets") {
+            Copy-Item `
+              "assets" `
+              "package/assets" `
+              -Recurse
+          }
+
+          Compress-Archive `
+            -Path "package/*" `
+            -DestinationPath "TheNineWorlds-windows-x64.zip"
+
+      - name: Package Linux
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          mkdir -p package
+
+          cp build/TheNineWorlds package/TheNineWorlds
+
+          if [ -d "assets" ]; then
+            cp -r assets package/assets
+          fi
+
+          chmod +x package/TheNineWorlds
+
+          tar -czf \
+            TheNineWorlds-linux-x64.tar.gz \
+            -C package .
+
+      - name: Upload Windows package
+        if: runner.os == 'Windows'
+        uses: actions/upload-artifact@v5
+        with:
+          name: windows-build
+          path: TheNineWorlds-windows-x64.zip
+          retention-days: 1
+
+      - name: Upload Linux package
+        if: runner.os == 'Linux'
+        uses: actions/upload-artifact@v5
+        with:
+          name: linux-build
+          path: TheNineWorlds-linux-x64.tar.gz
+          retention-days: 1
+
+  release:
+    name: Update Nightly Release
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Windows build
+        uses: actions/download-artifact@v5
+        with:
+          name: windows-build
+          path: release
+
+      - name: Delete existing Nightly release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete nightly \
+            --repo "${{ github.repository }}" \
+            --yes \
+            || true
+
+      - name: Delete existing Nightly tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git push \
+            origin \
+            --delete nightly \
+            || true
+
+      - name: Create Nightly release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          DATE=$(date +'%d/%m/%y')
+          MESSAGE=$(git log -1 --pretty=%s "${{ github.sha }}")
+
+          gh release create nightly \
+            release/TheNineWorlds-windows-x64.zip \
+            release/TheNineWorlds-linux-x64.tar.gz \
+            --repo "${{ github.repository }}" \
+            --title "Nightly of $DATE" \
+            --prerelease \
+            --latest=true \
+            --target "${{ github.sha }}" \
+            --notes "$(cat <<EOF
+          ## TheNineWorlds Nightly
+
+          **Nightly of $DATE**
+
+          $MESSAGE
+
+          Commit: \`${{ github.sha }}\`
+
+          ### Downloads
+
+          - **Windows x64** — \`TheNineWorlds-windows-x64.zip\`
+          - **Linux x64** — \`TheNineWorlds-linux-x64.tar.gz\`
+          EOF
+          )"

@@ -1,4 +1,4 @@
-﻿# The Nine Worlds
+# The Nine Worlds
 
 A Norse mythology inspired 3D action-adventure RPG.
 
