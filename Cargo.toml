@@ -11,25 +11,22 @@ license = "UNLICENSED"
 version = "0.1.0"
 
 [workspace.dependencies]
-# Graphics and windowing
-sdl3 = {
-    version = "0.20",
-    features = ["build-from-source", "raw-window-handle"]
-}
-raw-window-handle = "0.6"
-vulkano = "0.35.2"
-glam = "0.30"
-shaderc = "0.9"
-bytemuck = { version = "1", features = ["derive"] }
+# Game engine
+bevy = { version = "0.20.1", default-features = false, features = [
+    "default_app",
+    "3d_bevy_render",
+    "bevy_winit",
+    "multi_threaded",
+    "x11",
+    "wayland",
+] }
+bevy_ecs = "0.20.1"
 
-# ECS and gameplay
-bevy_ecs = "0.17"
+# Math
+glam = "0.30"
 
 # Physics
 oxijolt = "1"
-
-# Audio
-kira = "0.10"
 
 # Assets
 gltf = "1.4"
@@ -39,9 +36,9 @@ image = "0.25"
 egui = "0.31"
 
 # Serialization
-serde = { version = "1", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
 ron = "0.10"
-serde_json = "1"
+serde_json = "1.0"
 
 # Utilities
 anyhow = "1"
@@ -49,3 +46,4 @@ thiserror = "2"
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 notify = "8"
+

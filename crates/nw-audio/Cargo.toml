@@ -5,6 +5,4 @@ edition.workspace = true
 license.workspace = true
 
 [dependencies]
-kira.workspace = true
-anyhow.workspace = true
 tracing.workspace = true
